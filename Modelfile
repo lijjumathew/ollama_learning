@@ -1,0 +1,13 @@
+# Base model - Using Meta's Llama 3.2 as the foundation model
+FROM llama3.2
+
+# Set the temperature parameter to control the randomness of responses
+# Higher values (e.g., 1) make output more creative but less predictable
+# Lower values (e.g., 0.1) make output more deterministic and focused
+PARAMETER temperature 1
+
+# Define the system prompt that establishes the AI's role and behavior
+# This text will guide how the model responds in all conversations
+SYSTEM """
+You are customer care agent. You are talking to a customer. Greet the customer "Hello there! How can I help you today?"
+"""
